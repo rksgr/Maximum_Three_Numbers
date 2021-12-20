@@ -84,14 +84,26 @@ public class MaximumThreeNumbers <E>{
         }
         System.out.println(" The maximun among three is " + max);
     }
+    /*
+    Use case 6: Extend max method to take in more than 3 parameters
+    */
+    public static <E extends Comparable> void maxNumsGenerics(E a,E ... args){
+        E max = a;
+        // Iterate over all the elements
+        for (E x:args){
+            if ((max.compareTo(x))<0){
+            max = x;
+            } 
+        }
+        System.out.println(" The maximum among the given is " + max);
+    }
+       
     public static void main(String []args){
-        Integer a = 1, b =4, c= 5;
-        Double d=3.04, e=2.3,f=9.5;
-        String g = "Brid", h ="ge", i = "Labz";
+        Integer a = 1, b =4, c= 5,d=7;
+        String g = "Brid", h ="Ge", i = "Labz", j="Mimi";
         System.out.println("Welcome to BridgeLabz!");
         System.out.println("Today we shall find maximum among three numbers using Generics.");
-        new MaximumThreeNumbers<Integer>(a,b,c).maxNumsGenerics(a,b,c);
-        new MaximumThreeNumbers<Double>(d,e,f).maxNumsGenerics(d,e,f);
-        new MaximumThreeNumbers<String>(g,h,i).maxNumsGenerics(g,h,i);
+        maxNumsGenerics(a,b,c,d);
+        maxNumsGenerics(g,h,i,j);
     }
 }
