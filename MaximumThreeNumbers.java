@@ -41,10 +41,24 @@ public class MaximumThreeNumbers {
         System.out.println("The largest of three float numbers is: " + max);
         return max;
     }
-        
+    /*
+    Use Case 3: Find maximum of three Strings
+    */   
+    public static String maxThreeNumbers(String a,String b,String c){
+        String max;
+        if ((a.compareTo(b))>0 && (a.compareTo(c))>0){
+            max = a;
+        } else if (b.compareTo(c)>0){
+            max  = b;
+        }else{
+            max = c;
+        }
+        System.out.println("The largest of three strings is: "+max);
+        return max;
+    }
     public static void main(String []args){
         System.out.println("Welcome to BridgeLabz!");
         System.out.println("Today we shall find maximum among three numbers using Generics.");
-        maxThreeNumbers(5.2,23.5,4.6);
+        maxThreeNumbers("Bridge","Bailey","Bunsen");
     }
 }
