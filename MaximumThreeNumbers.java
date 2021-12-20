@@ -56,9 +56,23 @@ public class MaximumThreeNumbers {
         System.out.println("The largest of three strings is: "+max);
         return max;
     }
+    /*
+    Use case 4: Genric method to find maximum
+    */
+    public static <E extends Comparable> void maxNumsGenerics(E a,E b,E c){
+        E max;
+        if ((a.compareTo(b))>0 && (a.compareTo(c))>0){
+            max = a;
+        } else if (b.compareTo(c)>0){
+            max = b;
+        } else{
+            max = c;
+        }
+        System.out.println(" The maximun among three is " + max);
+    }
     public static void main(String []args){
         System.out.println("Welcome to BridgeLabz!");
         System.out.println("Today we shall find maximum among three numbers using Generics.");
-        maxThreeNumbers("Bridge","Bailey","Bunsen");
+        maxNumsGenerics(12,14,91);
     }
 }
