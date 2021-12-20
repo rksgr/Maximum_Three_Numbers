@@ -2,7 +2,21 @@
 package com.mycompany.dec_18_max_nos_generics;
 
 
-public class MaximumThreeNumbers {
+public class MaximumThreeNumbers <E>{
+    /*
+    Use Case 5 : Generic class to take in three variables of generic type
+    */
+    
+    E a;    // Generic variables
+    E b;
+    E c;
+    
+    // Parameterised constructor
+    public MaximumThreeNumbers(E a,E b,E c){
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
     /*
     Use Case 1: Find maximum of three integers
     */
@@ -71,8 +85,13 @@ public class MaximumThreeNumbers {
         System.out.println(" The maximun among three is " + max);
     }
     public static void main(String []args){
+        Integer a = 1, b =4, c= 5;
+        Double d=3.04, e=2.3,f=9.5;
+        String g = "Brid", h ="ge", i = "Labz";
         System.out.println("Welcome to BridgeLabz!");
         System.out.println("Today we shall find maximum among three numbers using Generics.");
-        maxNumsGenerics(12,14,91);
+        new MaximumThreeNumbers<Integer>(a,b,c).maxNumsGenerics(a,b,c);
+        new MaximumThreeNumbers<Double>(d,e,f).maxNumsGenerics(d,e,f);
+        new MaximumThreeNumbers<String>(g,h,i).maxNumsGenerics(g,h,i);
     }
 }
